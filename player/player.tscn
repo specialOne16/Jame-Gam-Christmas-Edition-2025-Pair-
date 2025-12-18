@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3xkwguw2nb6a"]
+
+[ext_resource type="Script" uid="uid://h6v1lu8c2ml4" path="res://player/player.gd" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://ddfhunuw2eqrx" path="res://player/player_movement.gd" id="2_rkbax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
+size = Vector2(40, 40)
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_oul6g")
+
+[node name="Panel" type="PanelContainer" parent="."]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "P "
+
+[node name="PlayerMovement" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("2_rkbax")
+player = NodePath("..")
+metadata/_custom_type_script = "uid://ddfhunuw2eqrx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rkbax")
