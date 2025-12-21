@@ -14,6 +14,10 @@ func _ready() -> void:
 	target_position = player.position
 
 func _physics_process(delta: float) -> void:
+	if player.level_finished: 
+		player.animated_sprite_2d.play("idle_%s" % get_direction_name())
+		return
+	
 	input_direction = Input.get_vector("left", "right", "up", "down")
 	
 	if player.position == target_position:

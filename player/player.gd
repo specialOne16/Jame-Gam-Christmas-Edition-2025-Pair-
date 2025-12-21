@@ -14,6 +14,7 @@ const MAX_BRIGHTNESS = 2.0
 @export var bells: Array[Bell]
 
 var target_light
+var level_finished = false
 
 func _ready() -> void:
 	target_light = MIN_BRIGHTNESS
@@ -25,6 +26,10 @@ func brighten_light(on):
 	if on: target_light = MAX_BRIGHTNESS
 
 func _process(delta: float) -> void:
+	if level_finished:
+		point_light_2d.texture_scale = move_toward(point_light_2d.texture_scale, 10, delta * BRIGHT_UP_SPEED)
+		return
+	
 	var speed = BRIGHT_DOWN_SPEED if point_light_2d.texture_scale > target_light else BRIGHT_UP_SPEED
 	point_light_2d.texture_scale = move_toward(point_light_2d.texture_scale, target_light, delta * speed)
 	
