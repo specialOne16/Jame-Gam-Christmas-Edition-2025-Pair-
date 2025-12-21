@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d3xkwguw2nb6a"]
+[gd_scene load_steps=18 format=3 uid="uid://d3xkwguw2nb6a"]
 
 [ext_resource type="Script" uid="uid://h6v1lu8c2ml4" path="res://player/player.gd" id="1_oul6g"]
 [ext_resource type="Texture2D" uid="uid://c8htdi6y6y0u0" path="res://assets/player/Character_Back.png" id="2_kb6p2"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://smuyse2fmna2" path="res://assets/player/Character_Stand_R.png" id="11_s7qer"]
 [ext_resource type="Texture2D" uid="uid://b841od2ck44mb" path="res://assets/player/Character_SideWalk_R 2.png" id="12_g4c7l"]
 [ext_resource type="Texture2D" uid="uid://ddvslg5h057rr" path="res://assets/player/Character_SideWalk_R.png" id="13_knn7v"]
+[ext_resource type="Texture2D" uid="uid://xopa46qmb35x" path="res://assets/map/point_light.webp" id="15_wodsf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7pqkx"]
 animations = [{
@@ -155,3 +156,6 @@ hit_from_inside = true
 target_position = Vector2(0, 40)
 collision_mask = 16
 hit_from_inside = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("15_wodsf")

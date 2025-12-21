@@ -32,5 +32,9 @@ position = Vector2(20, 100)
 position = Vector2(580, 340)
 scale = Vector2(-1, 1)
 
-[node name="Player" parent="TileMapLayer" instance=ExtResource("4_ktfr2")]
-position = Vector2(60, 180)
+[node name="Player" parent="TileMapLayer" node_paths=PackedStringArray("bells") instance=ExtResource("4_ktfr2")]
+position = Vector2(20, 180)
+bells = [NodePath("../Bell"), NodePath("../Bell2")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.003921569, 0.003921569, 0.003921569, 1)
