@@ -1,24 +1,49 @@
-[gd_scene load_steps=3 format=3 uid="uid://cn76lvbnupsv6"]
+[gd_scene load_steps=7 format=3 uid="uid://cn76lvbnupsv6"]
 
 [ext_resource type="Script" uid="uid://cu3ltusi407uv" path="res://game_object/bell.gd" id="1_o5l1x"]
+[ext_resource type="Texture2D" uid="uid://c4eewm1wyb5uj" path="res://assets/bell/Bell.png" id="2_srrga"]
+[ext_resource type="Texture2D" uid="uid://0h2fagjdd3w4" path="res://assets/bell/Bell_Ring_L.png" id="3_4xapq"]
+[ext_resource type="Texture2D" uid="uid://bbu5bgefkh4sh" path="res://assets/bell/Bell_Ring_R.png" id="4_7xjga"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ya58m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_srrga")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_srrga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4xapq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_srrga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7xjga")
+}],
+"loop": true,
+"name": &"ring",
+"speed": 4.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_korxx"]
-size = Vector2(40, 40)
+size = Vector2(32, 32)
 
 [node name="Bell" type="Area2D"]
 collision_layer = 0
 script = ExtResource("1_o5l1x")
 
-[node name="Panel" type="PanelContainer" parent="."]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "B"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ya58m")
+animation = &"ring"
+frame_progress = 0.58308727
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_korxx")

@@ -3,13 +3,13 @@ class_name Bell
 
 signal ring(is_ringing: bool)
 
-@onready var panel: PanelContainer = $Panel
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _on_area_entered(_area: Area2D) -> void:
 	ring.emit(true)
-	panel.modulate = Color.CYAN
+	animated_sprite_2d.play("ring")
 
 
 func _on_area_exited(_area: Area2D) -> void:
 	ring.emit(false)
-	panel.modulate = Color.WHITE
+	animated_sprite_2d.play("default")

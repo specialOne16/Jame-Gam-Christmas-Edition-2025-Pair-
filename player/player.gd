@@ -1,5 +1,7 @@
 extends Area2D
 class_name Player
 
-var grid_position: Vector2i
-var get_position_from_grid_position: Callable
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var wall_detectors: Array[RayCast2D] = [
+	$WallDetectorRight, $WallDetectorBottom, $WallDetectorLeft, $WallDetectorUp
+]
