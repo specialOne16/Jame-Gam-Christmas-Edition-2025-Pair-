@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://x2xe75nmi300"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://x2xe75nmi300"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24q3n"]
 content_margin_top = 4.0
@@ -42,6 +42,13 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ru1r"]
+bg_color = Color(0.5647059, 0.4862745, 0.43529412, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [resource]
 Button/colors/font_color = Color(0.4862745, 0.6745098, 0.7411765, 1)
 Button/colors/font_focus_color = Color(0.4862745, 0.6745098, 0.7411765, 1)
@@ -50,3 +57,4 @@ Button/colors/font_pressed_color = Color(0.4862745, 0.6745098, 0.7411765, 1)
 Button/styles/hover = SubResource("StyleBoxFlat_24q3n")
 Button/styles/normal = SubResource("StyleBoxFlat_ci82a")
 Button/styles/pressed = SubResource("StyleBoxFlat_vmmo2")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_0ru1r")

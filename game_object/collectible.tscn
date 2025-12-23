@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwx6bi1omd8fb"]
+
+[ext_resource type="Script" uid="uid://bitqvbib758eu" path="res://game_object/collectible.gd" id="1_0oq00"]
+[ext_resource type="Texture2D" uid="uid://cnk3w5vlbtonv" path="res://icon.svg" id="2_rc1vu"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0oq00"]
+light_mode = 2
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0oq00"]
+
+[node name="Collectible" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_0oq00")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+material = SubResource("CanvasItemMaterial_0oq00")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_rc1vu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0oq00")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
