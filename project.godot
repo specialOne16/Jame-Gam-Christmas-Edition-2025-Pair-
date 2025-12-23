@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Forest Lighting"
-run/main_scene="uid://bwsuwu0qiwcdd"
+run/main_scene="uid://bhwy6xtn4cghk"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 

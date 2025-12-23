@@ -156,3 +156,4 @@ metadata/_custom_type_script = "uid://ddfhunuw2eqrx"
 shape = SubResource("CircleShape2D_wodsf")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.2, 1.2)
