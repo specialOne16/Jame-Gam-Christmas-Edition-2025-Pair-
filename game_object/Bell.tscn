@@ -40,6 +40,8 @@ radius = 14.035668
 radius = 32.01562
 
 [node name="Bell" type="StaticBody2D"]
+light_mask = 2
+visibility_layer = 2
 collision_layer = 32
 script = ExtResource("1_o5l1x")
 
