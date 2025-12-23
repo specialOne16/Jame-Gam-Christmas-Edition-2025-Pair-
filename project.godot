@@ -47,6 +47,7 @@ left={
 
 2d_physics/layer_1="Player"
 2d_physics/layer_5="Wall"
+2d_physics/layer_6="Environment"
 
 [rendering]
 

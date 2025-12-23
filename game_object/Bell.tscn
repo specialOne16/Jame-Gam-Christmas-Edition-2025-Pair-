@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cn76lvbnupsv6"]
+[gd_scene load_steps=8 format=3 uid="uid://cn76lvbnupsv6"]
 
 [ext_resource type="Script" uid="uid://cu3ltusi407uv" path="res://game_object/bell.gd" id="1_o5l1x"]
 [ext_resource type="Texture2D" uid="uid://c4eewm1wyb5uj" path="res://assets/bell/Bell.png" id="2_srrga"]
@@ -33,26 +33,35 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_korxx"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_srrga"]
+radius = 14.035668
 
-[node name="Bell" type="Area2D"]
-collision_layer = 0
+[sub_resource type="CircleShape2D" id="CircleShape2D_4xapq"]
+radius = 32.01562
+
+[node name="Bell" type="StaticBody2D"]
+collision_layer = 32
 script = ExtResource("1_o5l1x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -19)
 sprite_frames = SubResource("SpriteFrames_ya58m")
 animation = &"ring"
 frame_progress = 0.58308727
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_korxx")
+shape = SubResource("CircleShape2D_srrga")
 
 [node name="BellStopTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
-[connection signal="area_exited" from="." to="." method="_on_area_exited"]
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="RingArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RingArea"]
+shape = SubResource("CircleShape2D_4xapq")
+debug_color = Color(0.7493215, 0.44924384, 0.28403634, 0.41960785)
+
 [connection signal="timeout" from="BellStopTimer" to="." method="_on_bell_stop_timer_timeout"]
+[connection signal="body_entered" from="RingArea" to="." method="_on_ring_area_body_entered"]

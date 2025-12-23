@@ -119,13 +119,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
-size = Vector2(32, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_wodsf"]
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 49
 script = ExtResource("1_oul6g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_7pqkx")
 animation = &"idle_back"
 
@@ -135,27 +136,7 @@ player = NodePath("..")
 metadata/_custom_type_script = "uid://ddfhunuw2eqrx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_rkbax")
-
-[node name="WallDetectorRight" type="RayCast2D" parent="."]
-target_position = Vector2(40, 0)
-collision_mask = 16
-hit_from_inside = true
-
-[node name="WallDetectorUp" type="RayCast2D" parent="."]
-target_position = Vector2(0, -40)
-collision_mask = 16
-hit_from_inside = true
-
-[node name="WallDetectorLeft" type="RayCast2D" parent="."]
-target_position = Vector2(-40, 0)
-collision_mask = 16
-hit_from_inside = true
-
-[node name="WallDetectorBottom" type="RayCast2D" parent="."]
-target_position = Vector2(0, 40)
-collision_mask = 16
-hit_from_inside = true
+shape = SubResource("CircleShape2D_wodsf")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 texture = ExtResource("15_wodsf")
