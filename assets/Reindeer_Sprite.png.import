@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hj3fkbu01m4q"
-path="res://.godot/imported/temp_tilemap.png-64800321ed9cff5017ebefeb258802ee.ctex"
+uid="uid://b1yhoyeni7i00"
+path="res://.godot/imported/Reindeer_Sprite.png-450b0ef53e5e810edbda0a1a7bd4bc3e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/map/temp_tilemap.png"
-dest_files=["res://.godot/imported/temp_tilemap.png-64800321ed9cff5017ebefeb258802ee.ctex"]
+source_file="res://assets/Reindeer_Sprite.png"
+dest_files=["res://.godot/imported/Reindeer_Sprite.png-450b0ef53e5e810edbda0a1a7bd4bc3e.ctex"]
 
 [params]
 
